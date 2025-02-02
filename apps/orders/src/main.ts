@@ -12,7 +12,7 @@ async function bootstrap() {
           brokers: ['localhost:9092'],
         },
         consumer: {
-          groupId: 'ORDERS_SERVICE',
+          groupId: 'orders_microservice',
         },
       },
     },

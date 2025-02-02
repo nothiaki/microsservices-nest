@@ -5,7 +5,7 @@ import { ClientKafka } from '@nestjs/microservices';
 @Injectable()
 export class OrdersService {
   constructor(
-    @Inject() private readonly ordersClient: ClientKafka
+    @Inject('ORDERS_SERVICE') private readonly ordersClient: ClientKafka
   ) {}
   create(createOrderDto: CreateOrderDto) {
     return this.ordersClient.emit('orders.process', createOrderDto);
