@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { OrderEntity } from './entities/order.entity';
+import { ProcessOrderDto } from './dto/process-order.dto';
 
 @Injectable()
 export class OrdersService {
-  process(order: OrderEntity) {
-    order.status = 'processing';
-    return order;
+  process(processOrderDto: ProcessOrderDto) {
+    processOrderDto.status = 'processing';
+    return processOrderDto;
   }
 }
