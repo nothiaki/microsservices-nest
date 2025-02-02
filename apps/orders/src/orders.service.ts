@@ -1,8 +1,10 @@
 import { Injectable } from '@nestjs/common';
+import { OrderEntity } from './entities/order.entity';
 
 @Injectable()
 export class OrdersService {
-  getHello(): string {
-    return 'Hello World!';
+  process(order: OrderEntity) {
+    order.status = 'processing';
+    return order;
   }
 }
